@@ -1,0 +1,36 @@
+
+
+.navbar {
+    background-color: #3F51B5;
+    color: white;
+    height: 60px;
+    display: flex;
+    padding: 10px 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-full { width: 100vw;}
+
+.nav-half {width: calc(100vw - 250px);}
+
+.hamburger-menu {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.nav__title {
+    display: flex;
+}
+.nav__title p {
+    padding: 0 16px;
+    font-size: 24px;
+}
+
+.github {
+    width: 32px;
+    height: 30px;
+
+    margin-right: 20px;
+}
