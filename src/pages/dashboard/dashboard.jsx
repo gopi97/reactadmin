@@ -1,12 +1,20 @@
+
+import React from 'react'
 import CommonPageWrap from '../../containers/commonPageWrap/commonPageWrap'
 import './dashboard.css'
 
+
+
 const DashBoard = () => {
+
   return (
     <div>
-      <CommonPageWrap>DashBoard</CommonPageWrap>
+      <CommonPageWrap>DashBoard
+     
+     
+      </CommonPageWrap>
     </div>
   )
-}
 
-export default DashBoard
+  }
+export default DashBoard;
