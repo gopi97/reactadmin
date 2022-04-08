@@ -1,14 +1,20 @@
 import CommonPageWrap from '../../containers/commonPageWrap/commonPageWrap'
 
 import React, { useEffect, useState } from "react";
-import { getUser } from "../../api/customers_api";
+import { getUser,DeleteUser} from "../../api/customers_api";
 import './customer.css';
+// import axios from 'axios';
 
 const Customer = () => {
 
 
   
   const [customers, setCustomers] = useState([]);
+
+  const [val,setval] = useState({});
+
+//   const [msg,setmsg] = useState();
+  
 
   
 
@@ -20,16 +26,57 @@ const Customer = () => {
       })
           .catch((err) => console.log(err))
 
+      
+
   }, [])
 
+  
 
 
+const handlechange = (e) => {
+    const value = e.target.value;
+    const name=e.target.name;
+    setval({ ...val, [name]: value });
+    console.log(val)
+
+}
+
+
+const handledelete=(e)=>{
+    DeleteUser(e.target.id).then((res1)=>{
+        // console.log(res1)
+      setCustomers(res1);
+      console.log(res1)
+
+    //   getUser().then((res) => {
+    //     console.log(res)
+    //     setCustomers(res)
+    // })
+
+
+    })
+  }
+
+
+    // const customeraddval = async (e) => {
+    //     e.preventDefault();
+    //     const userdata={};
+
+    //     await axios.post(`http://localhost:3005/Customers`,JSON.stringify(userdata))
+    //     .then((res) =>{
+    //         console.log(res.data);
+    //     })
+        
+    //     .catch((err) =>{
+    //         console.log(err)
+    //     })
+    // }
 
 
   return (
     <div>
       <CommonPageWrap>
-      <h2>Customers({customers.length})</h2>
+      {/* <h2>Customers({customers.length})</h2> */}
             <table>
                 <thead>
                     <tr>
@@ -54,7 +101,7 @@ const Customer = () => {
                                 <td>{item.Membership}</td>
                                 <td>
                                     <button >Edit</button>
-                                    <button >Delete</button>
+                                    <button onClick={handledelete}>Delete</button>
 
                                 </td>
 
@@ -66,6 +113,70 @@ const Customer = () => {
                 </tbody>
 
             </table>
+
+
+
+            
+            <form>
+
+
+
+
+                <table>
+                    <tr>
+
+                        <th><label> FirstName:</label><br /></th>
+                        <th><label> LastName: </label></th>
+                        <th><label> Email: </label></th>
+                        <th><label> Mobile: </label></th>
+                        <th><label> Membership: </label></th>
+                        <th><label>Actions:</label></th>
+                    </tr>
+
+
+                    <tr>
+                        <td>   <input type="text"
+                            name="sno"
+                            placeholder="enter the First name"
+                            onChange={handlechange}
+                        /></td>
+
+
+
+
+                        <td>
+                            <input type="text"
+                                name="lasttname"
+                                placeholder="enter the last name"
+                                onChange={handlechange}
+                            /></td>
+                        <td>
+                            <input type="text"
+                                name="email"
+                                placeholder="enter the email"
+                                onChange={handlechange}
+                            /></td>
+
+
+
+
+                        <td>
+                            <input type="text"
+                                name="age"
+                                placeholder="enter the Mobile"
+                                onChange={handlechange}
+                            /></td>
+
+
+                        <td> <input type="text" />
+                        </td>
+
+                        {/* <td><button onClick={customeraddval}>Add</button></td> */}
+
+                    </tr>
+                </table>
+
+            </form>
 
 
 
