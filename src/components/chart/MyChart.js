@@ -8,54 +8,61 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const MyChart = ()=>{
 
-    const LineChart ={
-
-                animationEnabled: true,
-                exportEnabled: true,
-                theme: "light2", // "light1", "dark1", "dark2"
-                title:{
-                    text: "New Orders",
-                    horizontalAlign: "left",
-                },
-                
-                data: [{
-                    type: "line",
-                    toolTipContent: "Week {x}: {y}%",
-                    connectNullData: true,
-                    dataPoints: [
-                        { x: 1, y: 64 },
-                        { x: 2, y: 61 },
-                        { x: 3, y: 64 },
-                        { x: 4, y: 62 },
-                        { x: 5, y: 64 },
-                        { x: 6, y: 60 },
-                        { x: 7, y: 58 },
-                        { x: 8, y: 59 },
-                        { x: 9, y: 53 },
-                        { x: 10, y: 54 },
-                        { x: 11, y: 61 },
-                        { x: 12, y: 60 },
-                        { x: 13, y: 55 },
-                        { x: 14, y: 60 },
-                        { x: 15, y: 56 },
-                        { x: 16, y: 60 },
-                        { x: 17, y: 59.5 },
-                        { x: 18, y: 63 },
-                        { x: 19, y: 58 },
-                        { x: 20, y: 54 },
-                        { x: 21, y: 59 },
-                        { x: 22, y: 64 },
-                        { x: 23, y: 59 }
-                    ]
-                }]
-            }
-
-        return(
-            <div>
-                <CanvasJSChart options={LineChart}/>
-            </div>
-
-        )
+    const Splint = {
+        animationEnabled: true,backgroundColor: "#b11cd9",
+        height:150,
+        width:600,
+        title:{
+            text: "New Orders",
+            fontColor:"white",
+            horizontalAlign:"left",
+            fontSize:20,
+            
+        },
+        axisX: {
+            valueFormatString: "MMM",
+            lineThickness: 0,
+            tickLength: 0,
+            labelFormatter: function(){
+                return " ";
+              }
+        },
+        axisY: {
+            
+            
+            gridThickness: 0,
+            lineThickness: 0,
+            tickLength: 0,
+            labelFormatter: function(){
+                return " ";
+              }
+        },
+        data: [{
+            yValueFormatString: "$#,###",
+            xValueFormatString: "MMMM",
+            type: "spline",
+            property:"0",
+            dataPoints: [
+                { x: new Date(2017, 0), y: 25060 },
+                { x: new Date(2017, 1), y: 27980 },
+                { x: new Date(2017, 2), y: 42800 },
+                { x: new Date(2017, 3), y: 32400 },
+                { x: new Date(2017, 4), y: 35260 },
+                { x: new Date(2017, 5), y: 33900 },
+                { x: new Date(2017, 6), y: 40000 },
+                { x: new Date(2017, 7), y: 52500 },
+               
+            ]
+        }]
+    }
+    return (
+    <div>
+        <CanvasJSChart options = {Splint}
+            
+        />
+       
+    </div>
+    );
 }
 
 

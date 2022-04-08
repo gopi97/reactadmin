@@ -4,21 +4,43 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 const MonthlySales = ()=>{
     const LineChart = {
         animationEnabled: true,
-        exportEnabled: true,
-        theme: "light2", //"light1", "dark1", "dark2"
+        theme: "d81b60", //"light1", "dark1", "dark2"
+        height:150,
+        width:600,
+        backgroundColor:"#d81b60",
+
         title:{
-            text: "Monthly Sales"
+            text: "Monthly Sales",
+            fontSize:20,
+            fontColor:"white",
+            horizontalAlign:"left",
+            
         },
         axisY: {
-            includeZero: true
+            includeZero: true,
+            gridThickness: 0,
+            lineThickness: 0,
+            tickLength: 0,
+            backgroundColor:"#d81b60",
+            FontColor: "white",
+            labelFormatter: function(){
+                return " ";
+              },
+              
         },
-        
+    
         data: [{
             type: "column", //change type to bar, line, area, pie, etc
             //indexLabel: "{y}", //Shows y value on all Data Points
-            
+            padding: 0,
+            width:5,
+            labelFontColor:"white",
+           
             indexLabelFontColor: "#5A5757",
-            indexLabelPlacement: "outside",
+            // indexLabelPlacement: "outside",
+            backgroundColor:"#d81b60",
+            color:"#e91e63",
+            labelFontColor:"white",
             
             dataPoints: [
                 { label:"Jan", y: 25 },
