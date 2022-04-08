@@ -9,15 +9,15 @@ const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__admin">
-        {/*<img className="sidebar__admin-pic" src={CatImg} alt="cat-png"></img>*/}
+        <img className="sidebar__admin-pic" src={CatImg} alt="cat-png"></img>
         <p>Admin</p>
-       {/* <img className="down-menu" src={DownMenu} alt="down-menu"></img>*/}
+       <img className="down-menu" src={DownMenu} alt="down-menu"></img>
       </div>
       <div>
-        <Link className="sidebar__link" to="">
+        <Link className="sidebar__link" to="/">
           <span>DashBoard</span>
         </Link>
-        <Link className="sidebar__link" to="">
+        <Link className="sidebar__link" to="/customer">
           <span>Customer</span>
         </Link>
         <Link className="sidebar__link" to="">
@@ -26,7 +26,7 @@ const SideBar = () => {
         <Link className="sidebar__link" to="">
           <span>Product</span>
         </Link>
-        <Link className="sidebar__link" to="">
+        <Link className="sidebar__link" to="/about">
           <span>About</span>
         </Link>
       </div>
