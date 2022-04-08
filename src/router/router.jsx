@@ -9,6 +9,8 @@ import MyChart from '../components/chart/MyChart'
 import MonthlySales from '../components/chart/MonthlySales'
 import Doughnut from '../components/chart/Doughnut'
 import Login from '../components/login/Login'
+import WebsiteAnalysis from '../components/chart/WebsiteAnalysis'
+
 
 
 const Router = () => {
@@ -16,7 +18,6 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<DashBoard/>}></Route>
-        
         <Route path="about" element={<About />}></Route>
         <Route path="customer" element={<Customer />}></Route>
         <Route path="order" element={<Order />}></Route>
