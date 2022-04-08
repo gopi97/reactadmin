@@ -1,185 +1,91 @@
 import CommonPageWrap from '../../containers/commonPageWrap/commonPageWrap'
 
-import React, { useEffect, useState } from "react";
-import { getUser,DeleteUser} from "../../api/customers_api";
-import './customer.css';
-// import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { PostData, getUser, del } from '../../api/customers_api'
+import './customer.css'
+import Edit from '../../assets/icons/Edit.svg'
+import Delete from '../../assets/icons/Delete.svg'
+import Search from '../../assets/icons/search.svg'
+import Add from '../../assets/icons/addIcon.svg'
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const Customer = () => {
-
-
-  
-  const [customers, setCustomers] = useState([]);
-
-  const [val,setval] = useState({});
-
-//   const [msg,setmsg] = useState();
-  
-
-  
+  const navigate = useNavigate();
+  const [customers, setCustomers] = useState([])
 
   useEffect(() => {
-
-      getUser().then((res) => {
-          console.log(res)
-          setCustomers(res)
+    getUser()
+      .then((res) => {
+        setCustomers(res)
       })
-          .catch((err) => console.log(err))
-
-      
-
+      .catch((err) => console.log(err))
   }, [])
 
-  
-
-
-const handlechange = (e) => {
-    const value = e.target.value;
-    const name=e.target.name;
-    setval({ ...val, [name]: value });
-    console.log(val)
-
-}
-
-
-const handledelete=(e)=>{
-    DeleteUser(e.target.id).then((res1)=>{
-        // console.log(res1)
-      setCustomers(res1);
-      console.log(res1)
-
-    //   getUser().then((res) => {
-    //     console.log(res)
-    //     setCustomers(res)
-    // })
-
-
-    })
+  const cusDelete = (e) => {
+    let cusId = e.target.id
+    // setCustomers((customers)=>customers.filter((value,i)=> i!=cusId))
+    del(cusId)
+    getUser()
+    console.log(cusId)
   }
 
+  const add_main = () => {
+    navigate('/addNewCus')
+  }
 
-    // const customeraddval = async (e) => {
-    //     e.preventDefault();
-    //     const userdata={};
-
-    //     await axios.post(`http://localhost:3005/Customers`,JSON.stringify(userdata))
-    //     .then((res) =>{
-    //         console.log(res.data);
-    //     })
-        
-    //     .catch((err) =>{
-    //         console.log(err)
-    //     })
-    // }
-
+    const editCus = () => {
+      navigate('/editCus')
+    }
 
   return (
     <div>
       <CommonPageWrap>
-      {/* <h2>Customers({customers.length})</h2> */}
-            <table>
-                <thead>
-                    <tr>
-                        <th>FirstName</th>
-                        <th>LastName</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
-                        <th>Membership</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
+        <div className="cus_div">
+          <h2 className="cus_head">Customers({customers.length})</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Membership</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
 
-                <tbody>
-                    {
-                        customers.map((item, id) => {
-                            console.log(customers)
-                            return <tr key={id}>
-                                <td>{item.FirstName}</td>
-                                <td>{item.LastName}</td>
-                                <td>{item.Email}</td>
-                                <td>{item.Mobile}</td>
-                                <td>{item.Membership}</td>
-                                <td>
-                                    <button >Edit</button>
-                                    <button onClick={handledelete}>Delete</button>
-
-                                </td>
-
-
-                            </tr>
-
-                        })
-                    }
-                </tbody>
-
-            </table>
-
-
-
-            
-            <form>
-
-
-
-
-                <table>
-                    <tr>
-
-                        <th><label> FirstName:</label><br /></th>
-                        <th><label> LastName: </label></th>
-                        <th><label> Email: </label></th>
-                        <th><label> Mobile: </label></th>
-                        <th><label> Membership: </label></th>
-                        <th><label>Actions:</label></th>
-                    </tr>
-
-
-                    <tr>
-                        <td>   <input type="text"
-                            name="sno"
-                            placeholder="enter the First name"
-                            onChange={handlechange}
-                        /></td>
-
-
-
-
-                        <td>
-                            <input type="text"
-                                name="lasttname"
-                                placeholder="enter the last name"
-                                onChange={handlechange}
-                            /></td>
-                        <td>
-                            <input type="text"
-                                name="email"
-                                placeholder="enter the email"
-                                onChange={handlechange}
-                            /></td>
-
-
-
-
-                        <td>
-                            <input type="text"
-                                name="age"
-                                placeholder="enter the Mobile"
-                                onChange={handlechange}
-                            /></td>
-
-
-                        <td> <input type="text" />
-                        </td>
-
-                        {/* <td><button onClick={customeraddval}>Add</button></td> */}
-
-                    </tr>
-                </table>
-
-            </form>
-
-
-
+            <tbody>
+              {customers.map((item, id) => {
+                return (
+                  <tr key={id}>
+                    <td>{item.fname}</td>
+                    <td>{item.lname}</td>
+                    <td>{item.email}</td>
+                    <td>{item.mobile}</td>
+                    <td>{item.reward}</td>
+                    <td className="edt_del">
+                      <img className="edt_icon" onClick={editCus} src={Edit} alt="edit"></img>
+                      <img
+                        className="del_icon"
+                        id={id}
+                        onClick={cusDelete}
+                        src={Delete}
+                        alt="delete"
+                      ></img>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+          <div className='icon_main'>
+              <img className='search_main' src={Search} alt='search'></img>
+              <img className='add_main' onClick={add_main} src={Add} alt='add'></img>
+        </div>
+        </div>
       </CommonPageWrap>
     </div>
   )
