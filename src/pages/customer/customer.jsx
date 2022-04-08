@@ -3,7 +3,7 @@ import CommonPageWrap from '../../containers/commonPageWrap/commonPageWrap'
 import React, { useEffect, useState } from "react";
 import { getUser,DeleteUser} from "../../api/customers_api";
 import './customer.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 const Customer = () => {
 
@@ -13,7 +13,7 @@ const Customer = () => {
 
   const [val,setval] = useState({});
 
-  const [msg,setmsg] = useState();
+//   const [msg,setmsg] = useState();
   
 
   
@@ -44,12 +44,14 @@ const handlechange = (e) => {
 
 const handledelete=(e)=>{
     DeleteUser(e.target.id).then((res1)=>{
+        // console.log(res1)
       setCustomers(res1);
+      console.log(res1)
 
-      getUser().then((res) => {
-        console.log(res)
-        setCustomers(res)
-    })
+    //   getUser().then((res) => {
+    //     console.log(res)
+    //     setCustomers(res)
+    // })
 
 
     })
