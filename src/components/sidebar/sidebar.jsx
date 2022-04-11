@@ -65,6 +65,9 @@ const SideBar = () => {
             alt="dashboard-menu"
           />
           <span>About</span>
+
+
+          
           </Link>
       </div>
     </div>

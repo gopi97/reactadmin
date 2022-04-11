@@ -4,6 +4,7 @@ import SideBar from '../../components/sidebar/sidebar'
 import './commonPageWrap.css'
 
 import { useState } from 'react'
+import SearchComponent from '../../components/searchbar/search'
 
 const CommonPageWrap = (props) => {
   const [showSideBar, setShowSideBar] = useState(true)
@@ -20,6 +21,8 @@ const CommonPageWrap = (props) => {
         <NavBar menuHandler={menuHandler} width={showSideBar} />
         {props.children}
       </span>
+
+    <SearchComponent/>
     </div>
   )
 }
