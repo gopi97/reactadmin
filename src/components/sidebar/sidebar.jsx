@@ -66,15 +66,6 @@ const SideBar = () => {
           />
           <span>About</span>
           </Link>
-
-          <Link className="sidebar__link" to="/addNewPdt">
-          <img
-            className="sidebar__link-menu"
-            src={AboutMenu}
-            alt="dashboard-menu"
-          />
-          <span>NP</span>
-        </Link>
       </div>
     </div>
   )

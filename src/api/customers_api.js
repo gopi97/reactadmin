@@ -1,15 +1,13 @@
 import axios from 'axios';
+import Customer from './../pages/customer/customer';
 
 
 export async function getUser(){
     let user;
     await (axios.get(`http://localhost:3005/Customers`))
     .then((res) =>{
-        user=res.data;
-    }
-
-    )
-
+       user=res.data;
+    })
     .catch((err) =>
         console.log(err)
     )
@@ -50,6 +48,7 @@ export function PostData (payload = {}) {
 
   export function del(payload={}) {
     let id = payload
+
     axios
       .delete(`http://localhost:3005/Customers/${id}`,payload,{
           headers: {'Content-Type': 'application/json'},
@@ -58,7 +57,7 @@ export function PostData (payload = {}) {
         console.log(res.data)
       })
       .catch((err) => {
-        // console.log(err)
+        console.log(err)
       })
 
   }

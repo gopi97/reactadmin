@@ -15,9 +15,10 @@ body {
 
 th,td {
     border-bottom: 1px solid rgb(224,224,224,1);
-
     text-align: center;
-    padding:20px 120px 10px 10px;
+    height: 54px;
+    width: 100vw;
+    /* padding:20px 120px 10px 10px; */
 }
 
 /* td {
@@ -25,8 +26,7 @@ th,td {
 } */
 
 table{
-    margin-left: 40px;
-    
+    margin-left: 40px;   
 }
 
 .cus_head {
@@ -37,7 +37,10 @@ table{
 
 .edt_del {
     display: flex;
+    width: 70px;
+    margin-left: 80px;
     align-items: center;
+    justify-content: space-around;
 }
 
 .edt_icon {
@@ -51,29 +54,30 @@ table{
     height: 30px;
     width: 30px;
     border-radius: 15px;
-    background-color: #E0E0E0;
+    background-color: #EFEFEF;
 }
 
 .icon_main {
     position: sticky;
     bottom: 30px;
     display: flex;
-    width: 100px;
+    width: 140px;
     justify-content: space-around;
     float: right;
     margin-top: 250px;
+    border-radius: 30px;
 }
 
 .search_main {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     background-color: #ADD8E6;
-    border-radius: 30%;
+    border-radius: 45px;
 }
 
 .add_main {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     background-color: #E91E63;
-    border-radius: 30%;
+    border-radius: 45px;
 }

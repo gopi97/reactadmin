@@ -16,3 +16,18 @@ export async function Orderlist(){
 
     return order;
 }
+export async function Productlist(){
+    let Product;
+    await (axios.get(`http://localhost:3005/Product`))
+    .then((res) =>{
+        Product=res.data;
+    }
+
+    )
+
+    .catch((err) =>
+        console.log(err)
+    )
+
+    return Product;
+}

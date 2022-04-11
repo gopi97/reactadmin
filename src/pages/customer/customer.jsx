@@ -28,7 +28,7 @@ const Customer = () => {
     let cusId = e.target.id
     // setCustomers((customers)=>customers.filter((value,i)=> i!=cusId))
     del(cusId)
-    getUser()
+    
     console.log(cusId)
   }
 
@@ -44,7 +44,7 @@ const Customer = () => {
     <div>
       <CommonPageWrap>
         <div className="cus_div">
-          <h2 className="cus_head">Customers({customers.length})</h2>
+          {<h2 className="cus_head">Customers({customers.length})</h2>}
           <table>
             <thead>
               <tr>
@@ -66,7 +66,8 @@ const Customer = () => {
                     <td>{item.email}</td>
                     <td>{item.mobile}</td>
                     <td>{item.reward}</td>
-                    <td className="edt_del">
+                    <td >
+                    <span className="edt_del">
                       <img className="edt_icon" onClick={editCus} src={Edit} alt="edit"></img>
                       <img
                         className="del_icon"
@@ -74,7 +75,7 @@ const Customer = () => {
                         onClick={cusDelete}
                         src={Delete}
                         alt="delete"
-                      ></img>
+                      ></img></span>
                     </td>
                   </tr>
                 )
