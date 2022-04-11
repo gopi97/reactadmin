@@ -276,6 +276,13 @@
       "CategoryName": "Confections",
       "Price": "222",
       "TotalinStock": "23"
+    },
+    {
+      "id": 26,
+      "ProductName": "Product IV",
+      "CategoryName": "Condiment",
+      "Price": "225",
+      "TotalinStock": "25"
     }
   ]
 }
