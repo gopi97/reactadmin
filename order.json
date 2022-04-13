@@ -1,12 +1,9 @@
 {
   "Customers": [
     {
-      "fname": "Vignesh",
-      "lname": "onnum kadaiyathu",
-      "reward": "10",
-      "email": "vicky@email.com",
-      "mobile": "847274892784",
-      "id": 1
+      "fname": "emmanuel",
+      "lname": "john",
+      "id": 3
     }
   ],
   "Order": [
@@ -99,6 +96,10 @@
       "Customer": "Rosseta",
       "OrderDate": "2017-01-09",
       "ShippingDate": "2017-01-01"
+    },
+    {
+      "Reference": "q",
+      "id": 11
     }
   ],
   "Product": [

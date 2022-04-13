@@ -21,7 +21,7 @@
   border-radius: 50%;
 }
 
-.sidebar__admin > p {
+.sidebar__admin > .sidebar_para {
   padding-left: 10px;
   color: white;
   font-size: 22px;

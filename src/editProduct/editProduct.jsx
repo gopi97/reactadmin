@@ -1,11 +1,11 @@
 import CommonPageWrap from '../containers/commonPageWrap/commonPageWrap'
-import './addNewCustomer.css'
+import './editProduct.css'
 import LeftArrow from '../assets/icons/leftArrow.svg'
 import { useState } from 'react';
 import Router from '../router/router';
 import {PostData} from '../api/customers_api'
 
-const AddNewCustomer = (props) => {
+const EditNewProduct = (props) => {
 
   const [cusValue,setCusVal] = useState([]);
   const [myval, setval] = useState([])
@@ -49,4 +49,4 @@ const AddNewCustomer = (props) => {
     </div>
   )
 }
-export default AddNewCustomer
+export default EditNewProduct;

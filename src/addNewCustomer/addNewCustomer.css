@@ -20,7 +20,7 @@ body {
     margin-top: 40px;
 }
 
-.add_Customer h3 {
+.add_Customer .head3 {
     border-bottom:1px solid #E0E0E0;
     font-size: 40px;
     font-family: sans-serif;
