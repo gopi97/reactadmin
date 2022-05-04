@@ -1,6 +1,7 @@
 {
   "Customers": [
     {
+<<<<<<< HEAD
       "fname": "Gopi",
       "lname": "S",
       "reward": "8585",
@@ -18,6 +19,11 @@
       "fname": "Gopi",
       "lname": "S",
       "id": 7
+=======
+      "fname": "emmanuel",
+      "lname": "john",
+      "id": 3
+>>>>>>> bc8e0478cbd7936e064e1d366e8a8acb7fdec6ce
     }
   ],
   "Order": [
@@ -110,6 +116,10 @@
       "Customer": "Rosseta",
       "OrderDate": "2017-01-09",
       "ShippingDate": "2017-01-01"
+    },
+    {
+      "Reference": "q",
+      "id": 11
     }
   ],
   "Product": [

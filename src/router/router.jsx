@@ -9,6 +9,8 @@ import AddNewOrder from './../addNewOrder/addNewOrder';
 import AddNewProduct from '../addNewProduct/addNewProduct'
 import Login from '../pages/loginPage/loginPage'
 import EditCustomer from '../editCustomer/editCustomer'
+import EditNewOrder from './../editOrder/editOrder';
+import EditNewProduct from './../editProduct/editProduct';
 
 const Router = () => {
   return (
@@ -24,6 +26,8 @@ const Router = () => {
         <Route path="addNewOrd" element={<AddNewOrder />}></Route>
         <Route path="addNewPdt" element={<AddNewProduct />}></Route>
         <Route path="editCus" element={<EditCustomer />}></Route>
+        <Route path="editOrder" element={<EditNewOrder />}></Route>
+        <Route path="editProduct" element={<EditNewProduct />}></Route>
       </Routes>
     </BrowserRouter>
   )

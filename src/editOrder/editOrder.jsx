@@ -1,12 +1,11 @@
 import CommonPageWrap from '../containers/commonPageWrap/commonPageWrap'
-import './addNewCustomer.css'
+import './editOrder.css'
 import LeftArrow from '../assets/icons/leftArrow.svg'
 import { useState } from 'react';
 import Router from '../router/router';
-import { Link } from 'react-router-dom';
 import {PostData} from '../api/customers_api'
 
-const AddNewCustomer = (props) => {
+const EditNewOrder = (props) => {
 
   const [cusValue,setCusVal] = useState([]);
   const [myval, setval] = useState([])
@@ -40,8 +39,8 @@ const AddNewCustomer = (props) => {
             </form>
             <div className="cus_btn">
               <button className="btn_save" onClick={save_cus_val}> Save</button>
-              <button className="btn_back"> <Link to="/products">Back</Link><span className='btn_span'>
-              <img className='lftArrImg' src={LeftArrow} alt="leftArrow"></img>
+              <button className="btn_back"> <span className='btn_span'>
+              <img className='lftArrImg' src={LeftArrow} alt="leftArrow"></img>Back
             </span></button>
             </div>
           </div>
@@ -50,4 +49,4 @@ const AddNewCustomer = (props) => {
     </div>
   )
 }
-export default AddNewCustomer
+export default EditNewOrder;

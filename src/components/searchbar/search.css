@@ -1,0 +1,26 @@
+.search_div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 400px;
+    width: 450px;
+    margin-left: 550px;
+    /* left: 250px; */
+    margin-top: 0px;
+    /* bottom: 250px; */
+    border-radius: 10px;
+}
+.search_head {
+    width: 1500px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#searchBtn {
+    margin-top: 50px;
+    height: 50px;
+    width: 80px;
+}

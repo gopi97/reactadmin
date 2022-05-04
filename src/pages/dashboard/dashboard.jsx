@@ -54,7 +54,11 @@ const DashBoard = () => {
         </Grid>
       </Grid>
     </Box>
+<<<<<<< HEAD
       </CommonPageWrap>
+=======
+    </CommonPageWrap>
+>>>>>>> bc8e0478cbd7936e064e1d366e8a8acb7fdec6ce
     </div>
     
   )

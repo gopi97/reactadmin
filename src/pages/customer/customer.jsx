@@ -2,19 +2,20 @@ import CommonPageWrap from '../../containers/commonPageWrap/commonPageWrap'
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import React, { useEffect, useState } from 'react'
-import { PostData, getUser, del } from '../../api/customers_api'
+import { PostData, getUser, del,PutCus } from '../../api/customers_api'
 import './customer.css'
 import Edit from '../../assets/icons/Edit.svg'
 import Delete from '../../assets/icons/Delete.svg'
 import Search from '../../assets/icons/search.svg'
 import Add from '../../assets/icons/addIcon.svg'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
 
 
 
-const Customer = () => {
+const Customer = (props) => {
   const navigate = useNavigate();
+  const [showSearchBar, setShowSearchBar] = useState(false)
   const [customers, setCustomers] = useState([])
 
   useEffect(() => {
@@ -37,8 +38,16 @@ const Customer = () => {
     navigate('/addNewCus')
   }
 
-    const editCus = () => {
-      navigate('/editCus')
+    const editCus = (e) => {
+      let d = e.target.id;
+      let edit = customers[d];
+      // PutCus(d)
+      console.log(edit)
+      navigate('/editCus',{state:edit})
+    }
+
+    const search_comp = () => {
+     
     }
 
   return (
@@ -59,24 +68,24 @@ const Customer = () => {
             </thead>
 
             <tbody>
-              {customers.map((item, id) => {
+              {customers.map((value, id) => {
                 return (
                   <tr key={id}>
-                    <td>{item.fname}</td>
-                    <td>{item.lname}</td>
-                    <td>{item.email}</td>
-                    <td>{item.mobile}</td>
-                    <td>{item.reward}</td>
+                    <td>{value.fname}</td>
+                    <td>{value.lname}</td>
+                    <td>{value.email}</td>
+                    <td>{value.mobile}</td>
+                    <td>{value.reward}</td>
                     <td >
-                    <span className="edt_del">
-                      <img className="edt_icon" onClick={editCus} src={Edit} alt="edit"></img>
+                      <img className="edt_icon" id={id} value={customers} onClick={editCus} src={Edit} alt="edit"></img>
                       <img
                         className="del_icon"
-                        id={id}
+                        id={value.id}
+                        // onClick={()=>cusDelete(value.id)}
                         onClick={cusDelete}
                         src={Delete}
                         alt="delete"
-                      ></img></span>
+                      ></img>
                     </td>
                   </tr>
                 )
@@ -84,7 +93,7 @@ const Customer = () => {
             </tbody>
           </table>
           <div className='icon_main'>
-              <img className='search_main' src={Search} alt='search'></img>
+              <img className='search_main' onClick={search_comp} src={Search} alt='search'></img>
               <img className='add_main' onClick={add_main} src={Add} alt='add'></img>
         </div>
         </div>

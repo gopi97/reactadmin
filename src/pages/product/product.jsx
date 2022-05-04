@@ -24,7 +24,7 @@ const Product = () => {
     navigate('/addNewPdt')
   }
   const editCus = () => {
-    navigate('/editCus')
+    navigate('/editProduct')
   }
   const cusDelete = (e) => {
     let cusId = e.target.id

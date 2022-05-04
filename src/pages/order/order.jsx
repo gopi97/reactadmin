@@ -24,7 +24,7 @@ const Order = () => {
     navigate('/addNewOrd')
   }
   const editCus = () => {
-    navigate('/editCus')
+    navigate('/editOrder')
   }
   const cusDelete = (e) => {
     let cusId = e.target.id

@@ -18,7 +18,7 @@ const SideBar = () => {
     <div className="sidebar">
       <div className="sidebar__admin">
         <img className="sidebar__admin-pic" src={CatImg} alt="cat-png"></img>
-        <p>Admin</p>
+        <p className='sidebar_para'>Admin</p>
         <img
           className="down-menu"
           src={DownMenu}

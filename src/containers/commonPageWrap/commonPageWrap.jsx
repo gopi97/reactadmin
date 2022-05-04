@@ -12,19 +12,21 @@ const CommonPageWrap = (props) => {
   const menuHandler = () => {
     setShowSideBar(!showSideBar)
   }
+  const searchHandler = () => {
+    setShowSideBar(!showSideBar)
+  }
 
   return (
     <div className="cp-wrap">
       {showSideBar ? <SideBar /> : null}
 
-      <span>
+      <span >
         <NavBar menuHandler={menuHandler} width={showSideBar} />
         {props.children}
       </span>
-
-    <SearchComponent/>
+      <SearchComponent />
     </div>
   )
 }
 
-export default CommonPageWrap
+export default CommonPageWrap;
