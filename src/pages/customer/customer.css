@@ -81,3 +81,7 @@ table{
     background-color: #E91E63;
     border-radius: 45px;
 }
+.pagenumber{
+    width: 50%;
+    justify-content: center;
+}

@@ -3,6 +3,7 @@ import './addNewCustomer.css'
 import LeftArrow from '../assets/icons/leftArrow.svg'
 import { useState } from 'react';
 import Router from '../router/router';
+import { Link } from 'react-router-dom';
 import {PostData} from '../api/customers_api'
 
 const AddNewCustomer = (props) => {
@@ -42,8 +43,8 @@ const AddNewCustomer = (props) => {
             </form>
             <div className="cus_btn">
               <button className="btn_save" onClick={save_cus_val}> Save</button>
-              <button className="btn_back"> <span className='btn_span'>
-              <img className='lftArrImg' src={LeftArrow} alt="leftArrow"></img>Back
+              <button className="btn_back"> <Link to="/products">Back</Link><span className='btn_span'>
+              <img className='lftArrImg' src={LeftArrow} alt="leftArrow"></img>
             </span></button>
             </div>
           </div>

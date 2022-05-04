@@ -1,5 +1,6 @@
 import CommonPageWrap from '../../containers/commonPageWrap/commonPageWrap'
-
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 import React, { useEffect, useState } from 'react'
 import { PostData, getUser, del } from '../../api/customers_api'
 import './customer.css'
@@ -26,7 +27,7 @@ const Customer = () => {
 
   const cusDelete = (e) => {
     let cusId = e.target.id
-    // setCustomers((customers)=>customers.filter((value,i)=> i!=cusId))
+    setCustomers((customers)=>customers.filter((value,i)=> i!=cusId))
     del(cusId)
     
     console.log(cusId)
@@ -87,7 +88,12 @@ const Customer = () => {
               <img className='add_main' onClick={add_main} src={Add} alt='add'></img>
         </div>
         </div>
+       
+       
       </CommonPageWrap>
+      <div className='pagenumber'> <Stack spacing={2}>
+      <Pagination count={10} />
+      </Stack></div>
     </div>
   )
 }

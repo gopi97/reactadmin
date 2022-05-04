@@ -47,13 +47,13 @@ import { getUser } from "../../api/customers_api";
 
     return (
         <div>
-            <CommonPageWrap>
+           
                 <input 
                 type="text" 
                 onChange={handlesearch}/>
 
                 
-            </CommonPageWrap>
+           
         </div>
     )
 }

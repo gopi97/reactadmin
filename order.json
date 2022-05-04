@@ -1,12 +1,23 @@
 {
   "Customers": [
     {
-      "fname": "Vignesh",
-      "lname": "onnum kadaiyathu",
-      "reward": "10",
-      "email": "vicky@email.com",
-      "mobile": "847274892784",
-      "id": 1
+      "fname": "Gopi",
+      "lname": "S",
+      "reward": "8585",
+      "email": "gopifxec@gmail.com",
+      "mobile": "8754658427",
+      "id": 4
+    },
+    [],
+    {
+      "fname": "Gopi",
+      "id": 6
+    },
+    [],
+    {
+      "fname": "Gopi",
+      "lname": "S",
+      "id": 7
     }
   ],
   "Order": [

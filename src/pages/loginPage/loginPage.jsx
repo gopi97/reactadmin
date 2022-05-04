@@ -20,7 +20,9 @@ const Login = () => {
   return (
     <div>
       <div className='log_div'>
-      <h1 className='log_head'>Login</h1>   
+      <p className='lgn__hdr'>React Redux CRM</p>
+      <p className='sub__tl'>Version 2.0.0</p>
+      {/* <h1 className='log_head'>Login</h1>    */}
         <input
           id="usrNam"
           placeholder="UserName"
